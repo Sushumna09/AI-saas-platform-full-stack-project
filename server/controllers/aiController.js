@@ -5,7 +5,7 @@ import axios from "axios";
 import FormData from "form-data";
 import { v2 as cloudinary } from "cloudinary";
 import fs from 'fs'
-import * as pdf from "pdf-parse";
+import pdf from "pdf-parse";
 
 const AI = new OpenAI({
   apiKey: process.env.GEMINI_API_KEY,
@@ -456,11 +456,7 @@ export const resumeReview = async (req, res) => {
 
     const dataBuffer = fs.readFileSync(resume.path);
 
-    const parser = new pdf.PDFParse({
-      data: dataBuffer,
-    });
-
-    const pdfText = await parser.getText();
+    const pdfData = await pdf(dataBuffer);
 
     const prompt = `
 Review the following resume and provide detailed constructive feedback.
@@ -478,7 +474,7 @@ Analyze:
 
 Resume Content:
 
-${pdfText.text}
+${pdfData.text}
 `;
 
     const response = await AI.chat.completions.create({
