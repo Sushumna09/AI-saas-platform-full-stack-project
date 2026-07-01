@@ -162,12 +162,6 @@ CLOUDINARY_API_SECRET=
 * Community Page
 ![Community page](image-1.png)
 
-## 👩‍💻 Author
-
-**Sushumna Devi Gajarla**
-
-Electronics and Communication Engineering
-VNIT Nagpur
 
 ## ⭐ Future Improvements
 
@@ -178,6 +172,11 @@ VNIT Nagpur
 * Advanced Analytics Dashboard
 
 
-## 📄 License
+## 👩‍💻 Author
 
-This project is licensed under the MIT License.
+**Sushumna Devi Gajarla**
+
+Electronics and Communication Engineering
+VNIT Nagpur
+
+
